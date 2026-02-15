@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DualStereo Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎧 DualStereo Player</h1>
+    <p class="tag">Made by Tanmay</p>
+
+    <div class="section">
+      <label>Left Ear (Song A)</label>
+      <input type="file" id="leftFile" accept="audio/*">
+      <input type="range" id="leftVolume" min="0" max="1" step="0.01" value="1">
+    </div>
+
+    <div class="section">
+      <label>Right Ear (Song B)</label>
+      <input type="file" id="rightFile" accept="audio/*">
+      <input type="range" id="rightVolume" min="0" max="1" step="0.01" value="1">
+    </div>
+
+    <div class="controls">
+      <button onclick="playAudio()">Play</button>
+      <button onclick="stopAudio()">Stop</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
