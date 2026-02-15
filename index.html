@@ -1,35 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DualStereo Player</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DualStereo Player | TNMY_3010</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>🎧 DualStereo Player</h1>
-    <p class="tag">Made by TNMY_3010</p>
+    <main class="app-container">
+        <div class="player-card">
+            <header>
+                <h1>🎧 DualStereo Player</h1>
+                <p class="subtitle">Developed by TNMY_3010 at Tanmay</p>
+            </header>
 
-    <div class="section">
-      <label>Left Ear (Song A)</label>
-      <input type="file" id="leftFile" accept="audio/*">
-      <input type="range" id="leftVolume" min="0" max="1" step="0.01" value="1">
-    </div>
+            <div class="controls-grid">
+                <div class="channel-box left-channel">
+                    <h3>Left Channel (L)</h3>
+                    <input type="file" id="audio-left" accept="audio/*">
+                    <label for="audio-left" class="file-label">Choose Audio 1</label>
+                    <div class="volume-control">
+                        <span>Vol</span>
+                        <input type="range" id="vol-left" min="0" max="1" step="0.01" value="0.7">
+                    </div>
+                </div>
 
-    <div class="section">
-      <label>Right Ear (Song B)</label>
-      <input type="file" id="rightFile" accept="audio/*">
-      <input type="range" id="rightVolume" min="0" max="1" step="0.01" value="1">
-    </div>
+                <div class="channel-box right-channel">
+                    <h3>Right Channel (R)</h3>
+                    <input type="file" id="audio-right" accept="audio/*">
+                    <label for="audio-right" class="file-label">Choose Audio 2</label>
+                    <div class="volume-control">
+                        <span>Vol</span>
+                        <input type="range" id="vol-right" min="0" max="1" step="0.01" value="0.7">
+                    </div>
+                </div>
+            </div>
 
-    <div class="controls">
-      <button onclick="playAudio()">Play</button>
-      <button onclick="stopAudio()">Stop</button>
-    </div>
+            <div class="playback-actions">
+                <button id="btn-play" class="btn primary">Play Both</button>
+                <button id="btn-stop" class="btn secondary">Stop</button>
+            </div>
 
-  </div>
+            <p id="status" class="status-text">Ready to upload files</p>
+        </div>
+    </main>
 
-  <script src="script.js"></script>
+    <footer>
+        © 2026 TNMY_3010 at Tanmay. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
