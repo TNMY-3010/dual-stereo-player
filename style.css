@@ -2,182 +2,95 @@
     --bg-color: #0a0b10;
     --card-bg: rgba(255, 255, 255, 0.05);
     --accent-color: #4f46e5;
-    --accent-hover: #6366f1;
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
     --border-color: rgba(255, 255, 255, 0.1);
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     background: radial-gradient(circle at center, #1e1b4b 0%, #0a0b10 100%);
     color: var(--text-main);
-    height: 100vh;
+    margin: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
 .app-container {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    padding: 20px;
 }
 
 .player-card {
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
     border: 1px solid var(--border-color);
     padding: 2.5rem;
     border-radius: 24px;
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 650px;
     text-align: center;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-header h1 {
-    font-size: 1.8rem;
-    letter-spacing: -0.5px;
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
 }
 
 .controls-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .channel-box {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     padding: 1.5rem;
     border-radius: 16px;
     border: 1px solid var(--border-color);
 }
 
-.channel-box h3 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 1rem;
-}
-
-input[type="file"] {
-    display: none;
+.file-name {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .file-label {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 10px 15px;
     background: var(--border-color);
     border-radius: 8px;
-    font-size: 0.8rem;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 0.85rem;
+    transition: 0.2s;
 }
 
-.file-label:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
+.file-label:hover { background: rgba(255,255,255,0.2); }
 
-.volume-control {
-    margin-top: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.volume-control span {
-    font-size: 0.7rem;
-    color: var(--text-dim);
-}
-
-/* Modern Slider Styling */
-input[type=range] {
-    -webkit-appearance: none;
-    width: 100%;
-    background: transparent;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 4px;
-    background: var(--border-color);
-    border-radius: 2px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    margin-top: -6px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
-}
+input[type="file"] { display: none; }
 
 .playback-actions {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
 }
 
 .btn {
-    padding: 12px 32px;
-    border-radius: 12px;
+    padding: 12px 24px;
+    border-radius: 10px;
     border: none;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.btn.primary {
-    background: var(--accent-color);
-    color: white;
-}
+.primary { background: var(--accent-color); color: white; }
+.secondary { background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--border-color); }
+.btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
-.btn.primary:hover {
-    background: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.5);
-}
-
-.btn.secondary {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-}
-
-.btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.status-text {
-    margin-top: 1.5rem;
-    font-size: 0.8rem;
-    color: var(--accent-color);
-}
-
-footer {
-    padding: 2rem;
-    font-size: 0.75rem;
-    color: var(--text-dim);
-}
+footer { padding: 2rem; color: var(--text-dim); font-size: 0.8rem; }
