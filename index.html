@@ -12,24 +12,30 @@
         <div class="player-card">
             <header>
                 <h1>🎧 DualStereo Player</h1>
-                <p class="subtitle">Developed by TNMY_3010 </p>
+                <p class="subtitle">Developed by TNMY_3010</p>
             </header>
 
             <div class="controls-grid">
-                <div class="channel-box left-channel">
+                <div class="channel-box">
                     <h3>Left Channel (L)</h3>
-                    <input type="file" id="audio-left" accept="audio/*">
-                    <label for="audio-left" class="file-label">Choose Audio 1</label>
+                    <div class="file-section">
+                        <label for="audio-left" class="file-label">Choose Audio 1</label>
+                        <input type="file" id="audio-left" accept="audio/*">
+                        <p id="name-left" class="file-name">No file selected</p>
+                    </div>
                     <div class="volume-control">
                         <span>Vol</span>
                         <input type="range" id="vol-left" min="0" max="1" step="0.01" value="0.7">
                     </div>
                 </div>
 
-                <div class="channel-box right-channel">
+                <div class="channel-box">
                     <h3>Right Channel (R)</h3>
-                    <input type="file" id="audio-right" accept="audio/*">
-                    <label for="audio-right" class="file-label">Choose Audio 2</label>
+                    <div class="file-section">
+                        <label for="audio-right" class="file-label">Choose Audio 2</label>
+                        <input type="file" id="audio-right" accept="audio/*">
+                        <p id="name-right" class="file-name">No file selected</p>
+                    </div>
                     <div class="volume-control">
                         <span>Vol</span>
                         <input type="range" id="vol-right" min="0" max="1" step="0.01" value="0.7">
@@ -40,19 +46,15 @@
             <div class="playback-actions">
                 <button id="btn-play" class="btn primary">Play Both</button>
                 <button id="btn-stop" class="btn secondary">Stop</button>
+                <button id="btn-download" class="btn secondary">Download Mix</button>
             </div>
-            <div class="playback-actions">
-    <button id="btn-play" class="btn primary">Play Both</button>
-    <button id="btn-stop" class="btn secondary">Stop</button>
-    <button id="btn-download" class="btn secondary">Download Mix</button>
-</div>
 
             <p id="status" class="status-text">Ready to upload files</p>
         </div>
     </main>
 
     <footer>
-        © 2026 TNMY_3010 .  All rights reserved.
+        © 2026 TNMY_3010. All rights reserved.
     </footer>
 
     <script src="script.js"></script>
